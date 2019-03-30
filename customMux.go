@@ -33,8 +33,8 @@ func (customMux *CustomMux) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 
 			//TODO Check permissions for user
 			/*context.Parameters = context.URL.Query()
-			secretKey := SecretKey(context.Parameters.Get("secretKey"))
-			if (route.Permission == NONE) || (secretKey != "" && secretKeyHasPermission(secretKey, route.Permission)) {
+			token := Token(context.Parameters.Get("token"))
+			if (route.Permission == NONE) || (token != "" && tokenHasPermission(token, route.Permission)) {
 			*/route.Handler(context)
 			//}
 			return

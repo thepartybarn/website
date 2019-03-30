@@ -7,19 +7,18 @@ import (
 	"regexp"
 )
 
-
 type Handler func(*Context)
 type Route struct {
 	Pattern    *regexp.Regexp
 	Handler    Handler
-	Permission Permission
+	Permission string
 }
 type CustomMux struct {
 	Routes       []Route
 	DefaultRoute Handler
 }
 
-func (customMux *CustomMux) Handle(pattern string, handler Handler, permission Permission) {
+func (customMux *CustomMux) Handle(pattern string, handler Handler, permission string) {
 	regexp := regexp.MustCompile(pattern)
 	route := Route{Pattern: regexp, Handler: handler, Permission: permission}
 

@@ -11,7 +11,6 @@ var (
 	log           = logrus.New()
 )
 
-
 func main() {
 	var err error
 	log.SetLevel(logrus.TraceLevel)
@@ -19,9 +18,9 @@ func main() {
 
 	myMux := &CustomMux{DefaultRoute: homeHandler}
 
-	myMux.Handle("/", homeHandler, NONE)
+	myMux.Handle("/", homeHandler, "NONE")
 
-	myMux.Handle("/api/login", loginHandler, NONE)
+	myMux.Handle("/api/login", loginHandler, "NONE")
 
 	//http.HandleFunc("/api/addUser", addUserHandler)
 	//http.HandleFunc("/api/addFriend", addFriendHandler)

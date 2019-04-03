@@ -25,7 +25,7 @@ func main() {
 	//http.HandleFunc("/api/addUser", addUserHandler)
 	//http.HandleFunc("/api/addFriend", addFriendHandler)
 
-	log.Trace("Opening HTTP Server")
+	log.Trace("Opening HTTP Server!")
 	err = http.ListenAndServe(":80", myMux)
 	if err != nil {
 		log.Panic(err)
